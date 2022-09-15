@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="./css/index.css"/>
+        <link rel="icon" href="img/icono1.ico">
+    <title>COFFE 503</title>
+ 
+
+</head>
+
+
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+    <header>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <header>
+        <div class="container">
+            <h1 class="text-center">COFFE 503</h1>
+            <hr>
+        </div>
+    </header>
+    <!--  SECTION STORE -->
+    <section class="store">
+        <div class="container">
+            <div class="items">
+                <div class="row">
+
+                    <div class="col-12 col-md-6">
+                        <div class="item shadow mb-4">
+                            <h3 id ="producto1" class="item-title">Café Salvadoreño</h3>
+                            <img class="item-image" src="./img/sv1.jpg">
+
+                            <div class="item-details">
+                                <h4 id="valor1" class="item-price">$50.000</h4>
+                                <button  id="Button00" class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="item shadow mb-4">
+                            <h3 id="producto2" class="item-title">Café Colombiano</h3>
+
+                            <img class="item-image" src="./img/bolsascafe.jpg">
+
+                            <div class="item-details">
+                                <h4 id="valor2" class="item-price">$30.000</h4>
+                                <button id="Button01" class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="item shadow mb-4">
+                            <h3 id="producto3" class="item-title">Café Turco</h3>
+
+                            <img class="item-image" src="./img/coffe123.webp">
+
+                            <div class="item-details">
+                                <h4 id="valor3" class="item-price">$560.000</h4>
+                                <button id="Button02" class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="item shadow mb-4">
+                            <h3 id="producto4" class="item-title">Café Brasileño</h3>
+
+                            <img class="item-image" src="./img/coffeeeeee4.jpg">
+
+                            <div class="item-details">
+                                <h4 id="valor4" class="item-price">$55.000</h4>
+                                <button id="Button03" class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="item shadow mb-4">
+                            <h3 id="producto5" class="item-title">Café Boliviano</h3>
+
+                            <img class="item-image" src="./img/coffeeeeee5.jpg">
+                            <div class="item-details">
+                                <h4 id="valor5" class="item-price">$32.000</h4>
+                                <button id="Button04" class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="item shadow mb-4">
+                            <h3 id="producto6" class="item-title">Café Mexicano</h3>
+
+                            <img class="item-image" src="./img/sv10.jpg">
+                            <div class="item-details">
+                                <h4 id="valor6" class="item-price">$25.000</h4>
+                                <button id="Button05" class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FINAL SECTION STORE -->
+    <!-- INICIO SECTION SHOPPING CART -->
+    <section class="shopping-cart">
+        <div class="container">
+            <h1 class="text-center">CARRITO</h1>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <div class="shopping-cart-header">
+                        <h6>Producto</h6>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="shopping-cart-header">
+                        <h6 class="text-truncate">Precio</h6>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="shopping-cart-header">
+                        <h6>Cantidad</h6>
+                    </div>
+                </div>
+            </div>
+            <!-- INICIO SHOPPING CART ITEMS -->
+            <div class="shopping-cart-items shoppingCartItemsContainer">
+            </div>
+            <!-- ? END SHOPPING CART ITEMS -->
+
+            <!-- INICIO TOTAL -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="shopping-cart-total d-flex align-items-center">
+                        <p class="mb-0">Total</p>
+                        <p class="ml-4 mb-0 shoppingCartTotal">$0</p>
+                        <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
+                            data-delay="2000">
+                            <div class="toast-header">
+                                <span>✅</span>
+                                <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="toast-body text-white">
+                                Se aumentó correctamente la cantidad
+                            </div>
+                        </div>
+                        <button id="Button06" class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
+                            data-target="#comprarModal">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FIN DEL TOTAL -->
+
+            <!-- INICIO MODAL COMPRA -->
+            <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="comprarModalLabel">Gracias por su compra</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Pronto recibirá su pedido</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FINAL MODAL COMPRA -->
+        </div>
+    </section>
+    <!-- FIN SECTION SHOPPING -->
+    
+    
+    <!--  SECTION INSERT CONTACT DATA -->
+    <div id="contenedor">
+        <h1 class="text-center">DATOS DE CONTACTO</h1>
+        <div id="contenido">
+            <div id="formulario">
+                <form action="contacto.php" method="post">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="3"></textarea>
+                    </div>
+                    <button id="Button07" type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+  
+    </div>
+    <!-- END SECTION  CONTACT -->
+
+    
+    <!-- INICIO MINI  FOOTER -->
+    <footer class="bg-dark p-3 mt-5">
+        <p class="text-center m-0 text-muted">Café 100% de calidad</p>
+    </footer>
+    <!-- FIN DEL FOOTER -->
+
+
+    <script defer src="./js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
+          
+       
+    
+            
