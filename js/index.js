@@ -78,24 +78,7 @@ class OrderDetails { // clase
         this.sku = sku //atributos
         this.quantity = quantity //atributos
     }
-    getId() { //funciones o metodos 
-        return this.id
-    }
-    getOrderId() { //funciones o metodos
-        return this.order_id
-    }
-    getProductId() { //funciones o metodos
-        return this.product_id
-    }
-    getPrice() { //funciones o metodos 
-        return this.price
-    }
-    getSku() { //funciones o metodos
-        return this.sku
-    }
-    getQuantity() { //funciones o metodos
-        return this.quantity
-    }
+  
 }
 
 class Orders { // clase
@@ -347,7 +330,7 @@ function updateShoppingCartTotal() {
       '.shoppingCartItemPrice'
     );
     const shoppingCartItemPrice = Number(
-      shoppingCartItemPriceElement.textContent.replace('€', '')
+      shoppingCartItemPriceElement.textContent.replace('$', '')
     );
     const shoppingCartItemQuantityElement = shoppingCartItem.querySelector(
       '.shoppingCartItemQuantity'
@@ -357,7 +340,7 @@ function updateShoppingCartTotal() {
     );
     total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
   });
-  shoppingCartTotal.innerHTML = `${total.toFixed(2)}€`;
+  shoppingCartTotal.innerHTML = `${total.toFixed(2)}$`;
 }
 
 function removeShoppingCartItem(event) {
