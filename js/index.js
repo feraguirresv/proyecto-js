@@ -69,64 +69,6 @@ class Products { // clase
 
 }
 
-class OrderDetails { // clase
-    constructor(id,order_id,product_id,price, sku, quantity) { //funcion contructora producto
-        this.id = id //atributos
-        this.order_id = order_id //atributos
-        this.product_id = product_id //atributos
-        this.price = price //atributos
-        this.sku = sku //atributos
-        this.quantity = quantity //atributos
-    }
-  
-}
-
-class Orders { // clase
-    constructor(id,customer_id, ammount,shipping_address,order_email,order_date,order_status) { //funcion contructora producto
-        this.id = id //atributos    
-        this.customer_id = customer_id //atributos
-        this.ammount = ammount //atributos
-        this.shipping_address = shipping_address //atributos
-        this.order_email = order_email //atributos
-        this.order_date = order_date //atributos
-        this.order_status = order_status //atributos
-    }
-    getId() { //funciones o metodos
-        return this.id
-    }
-    getCustomerId() { //funciones o metodos
-        return this.customer_id
-    }
-    getAmmount() { //funciones o metodos
-        return this.ammount
-    }
-    getShippingAddress() { //funciones o metodos
-        return this.shipping_address
-    }
-    getOrderEmail() { //funciones o metodos
-        return this.order_email
-    }
-    getOrderDate() { //funciones o metodos
-        return this.order_date
-    }
-    getOrderStatus() { //funciones o metodos
-        return this.order_status
-    }
-}
-
-class OrderStatus{
-    constructor (id, status){
-        this.id = id
-        this.status = status
-    }
-    getId(){
-        return this.id
-    }
-    getStatus(){
-        return this.status
-    }
-
-}
 
 class Customers { // clase
     constructor(id,email,password,full_name, billing_address, shipping_address, country,phone) { //funcion contructora producto
@@ -358,4 +300,38 @@ function quantityChanged(event) {
 function comprarButtonClicked() {
   shoppingCartItemsContainer.innerHTML = '';
   updateShoppingCartTotal();
+}
+
+//esto es solo para el ejemplo del localStorage
+let carrito;
+if(JSON.parse(localStorage.getItem('carrito'))){
+    carrito = JSON.parse(localStorage.getItem('carrito'))
+}else{
+    localStorage.setItem('carrito', JSON.stringify([]))
+    carrito =JSON.parse(localStorage.getItem('carrtio'))
+}
+
+
+let boton = document.getElementsByClassName("boton");
+
+class CartElements{
+    constructor(name, price, stock){ 
+        this.name = name;
+        this.price = price; 
+        this.stock = stock;
+    }
+}
+const cart = [];
+
+function cartLoad(name, price, stock){
+    cart.push(new CartElements(name, price, stock))
+}
+
+for (let i = 0; i <= CreateNewProducts.length; i++){
+    let name = CreateNewProducts[i].name;
+    let price = CreateNewProducts[i].price;   
+    let stock = CreateNewProducts[i].stock;
+
+    boton[i].addEventListener("click", () => { cartLoad(name, price, stock) 
+         console.log(cart)} )
 }
